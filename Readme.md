@@ -1,7 +1,7 @@
 # Личный проект «Киноман» [![Build status][travis-image]][travis-url]
 
 * Студент: [Елена Лапицкая](https://up.htmlacademy.ru/ecmascript/12/user/159241).
-* Наставник: `Неизвестно`.
+* Наставник: [Артем Приходько](https://htmlacademy.ru/profile/id1012525).
 
 ---
 
