@@ -1,5 +1,8 @@
 "use strict";
 
+const CARD_COUNT = 5;
+const EXTRA_CARD_COUNT = 2;
+
 const createUserRankTemplate = () => {
   return (`<section class="header__profile profile">
     <p class="profile__rating">Movie Buff</p>
@@ -200,3 +203,51 @@ const createFilmDetailsModalTemplate = () => {
   </form>
 </section>`);
 };
+
+const render = (container, template, place) => {
+  container.insertAdjacentHTML(place, template);
+};
+
+const mainHeaderElement = document.querySelector(`.header`);
+
+render(mainHeaderElement, createUserRankTemplate(), `beforeend`);
+
+const mainContentElement = document.querySelector(`.main`);
+
+render(mainContentElement, createMainMenuTemplate(), `beforeend`);
+render(mainContentElement, createSortTemplate(), `beforeend`);
+render(mainContentElement, createFilmsTemplate(), `beforeend`);
+
+const filmsElement = mainContentElement.querySelector(`.films`);
+
+render(filmsElement, createFilmsListTemplate(), `beforeend`);
+
+const filmsListElement = filmsElement.querySelector(`.films-list`);
+const filmsListContainerElement = filmsListElement.querySelector(`.films-list__container`);
+
+for (let i = 0; i < CARD_COUNT; i++) {
+  render(filmsListContainerElement, createFilmCardTemplate(), `beforeend`);
+}
+
+render(filmsElement, createTopRatedListTemplate(), `beforeend`);
+
+const topRatedListElement = filmsElement.querySelector(`.top-rated`);
+const topRatedListContainerElement = topRatedListElement.querySelector(`.films-list__container`);
+
+for (let i = 0; i < EXTRA_CARD_COUNT; i++) {
+  render(topRatedListContainerElement, createFilmCardTemplate(), `beforeend`);
+}
+
+render(filmsElement, createMostCommentedListTemplate(), `beforeend`);
+
+const mostCommentedListElement = filmsElement.querySelector(`.most-commented`);
+const mostCommentedListContainerElement = mostCommentedListElement.querySelector(`.films-list__container`);
+
+for (let i = 0; i < EXTRA_CARD_COUNT; i++) {
+  render(mostCommentedListContainerElement, createFilmCardTemplate(), `beforeend`);
+}
+
+const mainFooterElement = document.querySelector(`.footer`);
+
+render(mainFooterElement, createFooterStatisticTemplate(), `beforeend`);
+render(mainFooterElement, createFilmDetailsModalTemplate(), `afterend`);
