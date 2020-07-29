@@ -40,9 +40,16 @@ const createFilmsListTemplate = () => {
       </section>`);
 };
 
-const createFilmListExtraTemplate = () => {
-  return (`<section class="films-list--extra">
+const createTopRatedListTemplate = () => {
+  return (`<section class="films-list--extra top-rated">
       <h2 class="films-list__title">Top rated</h2>
+
+      <div class="films-list__container"></div></section>`);
+};
+
+const createMostCommentedListTemplate = () => {
+  return (`<section class="films-list--extra most-commented">
+      <h2 class="films-list__title">Most commented</h2>
 
       <div class="films-list__container"></div></section>`);
 };
